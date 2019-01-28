@@ -11,6 +11,10 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "element": "^0.1.4",
+    "element-ui": "^2.5.2",
+    "mint": "^0.3.5",
+    "mint-ui": "^2.2.13",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
