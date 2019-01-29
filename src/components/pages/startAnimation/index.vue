@@ -39,9 +39,14 @@ export default {
 .bg {
   z-index: 1995;
   position: absolute;
-  width: 100%;
-  height: 100vh;
   background: linear-gradient(orange, skyblue, pink);
+  /* background: url('http://cdn.mtnhao.com/music/bg.jpg');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  filter: blur(12);
+  transform: translateZ(0);
+  transition: all .8s; */
 }
 .bg > div {
   position: absolute;
