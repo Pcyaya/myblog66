@@ -98,7 +98,7 @@ export default {
           setTimeout(() => {
             this.playAuto();
             this.time = 0;
-          }, 300);
+          }, 100);
         }
       }
     },
@@ -114,7 +114,7 @@ export default {
           setTimeout(() => {
             this.playAuto();
             this.time = 0;
-          }, 300);
+          }, 100);
         }
       }
     },
