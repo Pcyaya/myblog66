@@ -1,7 +1,5 @@
 <template>
     <div class="count">
-        <div>{{user.count}}</div>
-        <div v-for="(item, index) in bookList" :key="index">{{item.name}} <span @click="DELETE_BOOK(item.id)">X</span> </div>
         <div>
             <button @click="add(10)">+</button>
             <button @click="reduce(5)">-</button>
@@ -14,6 +12,8 @@
             <input v-model="addbook" type="text">
             <button @click="ADD_BOOK(addbook)">add</button>
         </div>
+        <div>{{user.count}}</div>
+        <div v-for="(item, index) in bookList" :key="index">{{item.name}} <span @click="DELETE_BOOK(item.id)">X</span> </div>
     </div>
 </template>
 

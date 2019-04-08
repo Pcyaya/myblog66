@@ -61,30 +61,38 @@ export default {
   methods: {
     playAuto() {
       const that = this;
+      clearInterval(that.playtype);
       let audio = document.getElementById("audio");
-      if (audio.paused) {
-        audio.play();
-        this.msg = 1;
-      } else {
-        audio.pause();
-        this.msg = 2;
-      }
-      this.playTime = this.formatDuration(audio.currentTime);
-      this.tolos = this.formatDuration(audio.duration);
-      this.maxTime = audio.duration;
-      let start = setInterval(() => {
-        this.$forceUpdate();
-        this.playTime = this.formatDuration(audio.currentTime);
-        this.time = audio.currentTime;
-        if(this.playTime == this.tolos){
+      that.maxTime = audio.duration;
+      if(that.maxTime){
+        that.playTime = that.formatDuration(audio.currentTime);
+        that.tolos = that.formatDuration(audio.duration);
+        console.log(that.maxTime)
+        let start = setInterval(() => {
+          that.$forceUpdate();
+          that.playTime = that.formatDuration(audio.currentTime);
+          that.time = audio.currentTime;
+          if(that.playTime == that.tolos){
+            audio.pause();
+            clearInterval(start)
+            setTimeout(() => {
+              that.msg = 0;
+              that.next();
+            }, 1000);
+          }
+        }, 1000);
+        if (audio.paused) {
+          audio.play();
+          that.msg = 1;
+        } else {
           audio.pause();
-          clearInterval(start)
-          setTimeout(() => {
-            that.msg = 0;
-            that.next();
-          }, 1000);
+          that.msg = 2;
         }
-      }, 1000);
+      }else {
+        that.playtype = setInterval(()=>{
+          that.playAuto();
+        },1000);
+      }
     },
     pre() {
       for (let i = this.list.length-1; i >=0; i--) {

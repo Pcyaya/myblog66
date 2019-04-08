@@ -8,28 +8,26 @@
 </template>
 
 <script>
-import StartAnimation from './components/pages/startAnimation'
-import play from './components/home/home'
+import StartAnimation from "./components/pages/startAnimation";
+import play from "./components/home/home";
 export default {
-  name: 'App',
+  name: "App",
   data() {
-    return{
-
-    }
+    return {};
   },
   // props:['StartAnimation'],
-  components: {StartAnimation,play}
-}
+  components: { StartAnimation, play }
+};
 </script>
 
 <style>
-*{
+* {
   padding: 0;
   margin: 0;
 }
 #app {
   z-index: 111;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* width: 100%; */
@@ -37,20 +35,20 @@ export default {
   width: 100%;
   height: 100%;
 }
-.bgzz{
+.bgzz {
   z-index: -1;
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
-  background: url('http://cdn.mtnhao.com/music/bg.jpg');
+  background: url("http://cdn.mtnhao.com/music/bg.jpg");
   width: 100%;
   height: 100%;
   background-size: cover;
   filter: blur(12);
-  opacity: .5;
+  opacity: 0.5;
   transform: translateZ(0);
-  transition: all .8s;
+  transition: all 0.8s;
 }
 </style>
